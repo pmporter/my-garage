@@ -4,7 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a React Native Expo application built with TypeScript, using Expo Router for file-based navigation and a tab-based layout. The project supports cross-platform development (iOS, Android, Web) with automatic light/dark mode theming.
+**My Garage** is a comprehensive vehicle maintenance tracking and management application built with React Native Expo and TypeScript. The app is designed for owners of motorcycles, cars, bikes, boats, and other vehicles that require regular maintenance and record keeping.
+
+### Core Purpose
+The application combines maintenance tracking with intelligent affiliate marketing, providing users with precise part recommendations at optimal timing. For example, when a user's 2024 Aprilia Tuono V4 is approaching an oil change, the app will show the exact oil filter needed with affiliate links to Amazon, RevZilla, and other partners.
+
+### Business Model
+- **Primary Revenue**: Affiliate commissions from targeted part recommendations
+- **Secondary Revenue**: Premium features, targeted advertising, data insights
+- **Key Differentiator**: Hyper-targeted recommendations (specific parts for specific vehicles at optimal timing)
 
 ## Development Commands
 
@@ -53,10 +61,65 @@ The project implements a comprehensive theming system:
 - `tsconfig.json` - TypeScript config extending Expo's base with strict mode and path mapping
 - `eslint.config.js` - ESLint using Expo's flat config with dist folder ignored
 
-## Development Notes
+## Application Features
 
-- The project uses React Native 0.79.5 with React 19.0.0
-- Expo SDK ~53.0.20 with Router v5.1.4
+### Core Features
+- **Multi-Vehicle Support**: Motorcycles, cars, trucks, boats, bikes, ATVs, etc.
+- **Maintenance Tracking**: Oil changes, services, repairs with photo documentation
+- **Smart Scheduling**: Automatic reminders based on time/mileage intervals
+- **Document Management**: Receipts, warranties, manuals with OCR processing
+- **Affiliate Marketing**: Contextual part recommendations with multi-partner integration
+
+### Key User Flows
+1. **Vehicle Registration**: Add vehicle → Auto-populate specs via VIN → Set maintenance schedule
+2. **Maintenance Logging**: Record service → Upload photos/receipts → Track parts used
+3. **Smart Recommendations**: Maintenance due → Show specific parts → Affiliate purchase links
+4. **Analytics**: Cost tracking, service history, vehicle health scoring
+
+## Technical Architecture
+
+### Frontend Stack
+- **React Native 0.79.5** with **React 19.0.0**
+- **Expo SDK ~53.0.20** with Router v5.1.4
+- **TypeScript** for type safety
+- **Cross-platform**: iOS, Android, Web support
+
+### Backend Architecture (Planned)
+- **GraphQL API** with Apollo Server
+- **Node.js/Express** backend services
+- **PostgreSQL** for structured data
+- **Redis** for caching and sessions
+- **AWS S3** for photo/document storage
+
+### Key Integrations
+- **VIN Lookup APIs** for vehicle specifications
+- **Affiliate APIs**: Amazon Associates, RevZilla, AutoZone
+- **OCR Services** for receipt processing
+- **Push Notifications** via Firebase FCM
+
+## Project Structure
+
+### Current State (Expo Template)
+This is currently a fresh Expo template with basic tab navigation. The production application will be built on this foundation.
+
+### Documentation
+Comprehensive documentation is available in the `/docs` directory:
+- `docs/overview.md` - Application overview and business model
+- `docs/features.md` - Detailed feature specifications
+- `docs/architecture.md` - System architecture and technical design
+- `docs/data-models.md` - Database schema and data models
+- `docs/api/api-specification.md` - Complete GraphQL API specification
+
+### Development Notes
+
 - All components follow theme-aware patterns using the custom theming hooks
 - Platform-specific styling is handled via `Platform.select()` where needed
 - Tab bar uses blur effects on iOS with transparent positioning
+- Path mapping configured with `@/*` for clean imports
+- ESLint configured with Expo's flat config
+
+## Specialized Agents
+
+The project includes specialized Claude agents for development assistance:
+- **react-native-security-expert**: Security-focused code review and implementation guidance
+- **react-native-architect**: System design, technical documentation, and requirements analysis
